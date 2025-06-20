@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Image Gallery Filter - Tailwind</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans relative">
+
+  <div class="container mx-auto px-4 py-10">
+    <h1 class="text-4xl font-bold text-center mb-6 text-blue-700">Image Gallery with Filters</h1>
+
+    <!-- Filter Buttons -->
+    <div class="flex justify-center flex-wrap gap-4 mb-8">
+      <button data-filter="all" class="filter-btn bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">All</button>
+      <button data-filter="forest" class="filter-btn bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Forest</button>
+      <button data-filter="animals" class="filter-btn bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600">Animals</button>
+      <button data-filter="nature" class="filter-btn bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">Nature</button>
+      <button data-filter="people" class="filter-btn bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600">People</button>
+      <button data-filter="country" class="filter-btn bg-teal-500 text-white px-4 py-2 rounded hover:bg-teal-600">Country</button>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 gallery"></div>
+
+    <!-- Modal Lightbox -->
+    <div id="lightbox" class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
+      <img id="lightbox-img" src="" class="max-w-full max-h-[80vh] rounded-lg shadow-2xl">
+      <button onclick="closeLightbox()" class="absolute top-4 right-4 text-white text-3xl font-bold">&times;</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
